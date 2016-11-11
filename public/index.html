@@ -2,17 +2,58 @@
 <html ng-app="WineApp">
   <head>
     <meta charset="utf-8">
-    <title>Wine O'clock</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Wine O'Clock</title>
     <script type="text/javascript" src="scripts/jquery/dist/jquery.min.js"></script>
     <script src="scripts/angular/angular.min.js"></script>
     <script src="scripts/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <script src="/scripts/angular-flash-alert/dist/angular-flash.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/mainController.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $(".dropdown-button").dropdown();
+        $('select').material_select();
+      })
+    </script>
+    <link type="text/css" rel="stylesheet" href="/scripts/angular-flash-alert/dist/angular-flash.min.css" />
+    <link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body>
-    <a ui-sref='home' ui-sref-active='active'>Home</a>
-    <a ui-sref='signup' ui-sref-active='active'>Sign up</a>
-    <a ui-sref='login' ui-sref-active='active'>Log in</a>
-    <div ui-view></div>
+    <div ng-controller="WineController as wine">
+      <div class="navbar-fixed">
+            <ul id="dropdown1" class="dropdown-content">
+                <li><a ui-sref='home' ui-sref-active='active' class="red-text">Home</a></li>
+              <!-- <div ng-hide="main.user"> -->
+                <li class="divider"></li>
+                <li><a ui-sref='signup' ui-sref-active='active' class="red-text">Sign up</a></li>
+                <li class="divider"></li>
+                <li><a ui-sref='login' ui-sref-active='active' class="red-text">Log in</a></li>
+              <!-- </div> -->
+              <!-- <div ng-show="main.user"> -->
+                <li class="divider"></li>
+                <li><a ng-click="main.logout(main.user)" class="red-text">Log out</a></li>
+              <!-- </div> -->
+              <!-- <div ng-show="main.user"> -->
+                <li class="divider"></li>
+                <li><a ui-sref='cellar' ui-sref-active='active' class="red-text">Cellar</a></li>
+              <!-- </div> -->
+            </ul>
+            <nav>
+              <div class="nav-wrapper red">
+                <a href="#!" class="brand-logo center">Wine O'Clock</a>
+                <ul class="right">
+                  <li class='nav-link hide-on-small-only' ng-show="main.user">Welcome, {{main.user.username}}</li>
+                  <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+      <div ui-view></div>
+    </div>
+    <footer id="footnoteid"><flash-message duration = "7000" show-close = 'true'></flash-message></footer>
   </body>
 </html>

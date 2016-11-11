@@ -1,1 +1,20 @@
-loggin 
+<div class="container">
+  <h2 class="red-text">Log in:</h2>
+  <!-- <h6>*log in with Username: Kelly, Password: kelly to test out my app*</h6> -->
+  <br>
+  <div class="row">
+      <form class="col s12" ng-submit="wine.login(user)">
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <input id="input" type="email" class="validate" ng-model="user.email">
+            <label id='label2' for="username">Email</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input id="input1" type="password" class="validate" ng-model="user.password">
+            <label id='label3' for="password">Password</label>
+          </div>
+        </div>
+        <button class="btn waves-effect waves-light red" type="submit" name="action">Log in</button>
+      </form>
+    </div>
+  </div>

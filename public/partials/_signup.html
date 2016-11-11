@@ -1,1 +1,25 @@
-signup
+<div class="container">
+  <h2 class="red-text">Sign up:</h2>
+    <div class="row">
+      <form class="col s12" ng-submit="wine.signup(user)">
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <input id="username" type="text" class="validate" ng-model="user.first_name">
+            <label for="username">First Name</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input id="zipcode" type="text" class="validate" ng-model="user.last_name">
+            <label for="zipcode">Last Name</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input id="email" type="email" class="validate" ng-model="user.email">
+            <label for="email">Email</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input id="password" type="password" class="validate" ng-model="user.password">
+            <label for="password">Password</label>
+          </div>
+        </div>
+        <button class="btn waves-effect waves-light red" type="submit" name="action">Submit</button>
+      </form>
+</div>

@@ -1,6 +1,6 @@
 (function() {
   angular
-    .module('WineApp', ['ui.router'])
+    .module('WineApp', ['ui.router', 'ngFlash'])
     .config(MainRouter);
 
   MainRouter.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
@@ -19,11 +19,10 @@
       url:'/login',
       templateUrl: '../partials/_login.html',
     })
-
-    // .state('profile', {
-    //   url: '/profile',
-    //   templateUrl: 'profile.html',
-    // })
+    .state('cellar', {
+      url: '/cellar',
+      templateUrl: '../partials/_cellar.html',
+    })
     // .state('about', {
     //   url: '/about',
     //   templateUrl: 'about.html',
