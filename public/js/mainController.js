@@ -61,17 +61,6 @@
       $state.go('home', {url: '/'});
     }
 
-    this.addBottle = function(bottle) {
-      console.log(bottle);
-      return $http({
-        url: `${rootUrl}/bottles/results/${bottle.search}`,
-        method: 'GET'
-      })
-      .then(function(response) {
-        console.log(response);
-      })
-    }
-
     this.allBottles = function(id) {
       console.log(id);
       return $http({
@@ -84,6 +73,31 @@
       })
       .catch(function(err) {
         console.log(err);
+      })
+    }
+
+    this.addBottle = function(bottle) {
+      console.log(bottle);
+      return $http({
+        url: `${rootUrl}/bottles/results/${bottle.search}`,
+        method: 'GET'
+      })
+      .then(function(response) {
+        console.log(response);
+        bottle = response.data;
+        return $http({
+          url: `${rootUrl}/users/${self.user.id}/bottles`,
+          method: 'POST',
+          data: bottle
+        })
+        .then(function(response) {
+          // console.log(response);
+          // console.log(response.data.bottle.id);
+          var id = response.data.bottle.id;
+          bottle.id = id;
+          self.bottles.push(bottle);
+          console.log('update bottles>>', self.bottles);
+        })
       })
     }
 

@@ -8,21 +8,98 @@
     <ul class="tabs">
       <li class="tab col s3"><a class="active" href="#test1">Pinot Noir</a></li>
       <li class="tab col s3"><a href="#test2">Cabernet Sauvignon</a></li>
-      <li class="tab col s3"><a href="#test4">Merlot</a></li>
+      <li class="tab col s3"><a href="#test3">Merlot</a></li>
       <li class="tab col s3"><a href="#test4">Syrah</a></li>
-      <li class="tab col s3"><a href="#test4">Malbec</a></li>
-      <li class="tab col s3"><a href="#test4">Zinfandel</a></li>
-      <li class="tab col s3"><a href="#test4">Blends | Other</a></li>
+      <li class="tab col s3"><a href="#test5">Malbec</a></li>
+      <li class="tab col s3"><a href="#test6">Zinfandel</a></li>
+      <li class="tab col s3"><a href="#test7">Blends | Other</a></li>
     </ul>
   </div>
 </div>
-<br><br><br>
+
+<div class='container'>
 <div class='row'>
-  <div id="test1" class="col s8">
-    <span>hello</span>
+<!-- PINOTS   -->
+  <div id="test1" class="col s12">
+    <div ng-repeat='bottle in wine.bottles'>
+      <div ng-if="bottle.category === 'Pinot Noir'">
+        <div class="col s12 m6">
+          <div class="card horizontal">
+            <div class="card-image">
+              <img src="{{bottle.label}}">
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <div class='col s10'>
+                  <p>Vineyard: {{bottle.vineyard}}</p>
+                  <p>Year: {{bottle.vintage}}</p>
+                </div>
+                <div class='col s2'>
+                  <button class="btn-floating red white-text" ui-sref="bottle" ui-sref-active='active' ng-click="main.startAdd()"><i class="material-icons right">send</i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
+<!-- CABS  -->
+  <div id="test2" class="col s12">
+    <div ng-repeat='bottle in wine.bottles'>
+      <div ng-if="bottle.category === 'Cabernet Sauvignon'">
+        <div class="col s12 m6">
+          <div class="card horizontal">
+            <div class="card-image">
+              <img src="{{bottle.label}}">
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <div class='col s10'>
+                  <p>Vineyard: {{bottle.vineyard}}</p>
+                  <p>Year: {{bottle.vintage}}</p>
+                </div>
+                <div class='col s2'>
+                  <button class="btn-floating red white-text" ui-sref="bottle" ui-sref-active='active' ng-click="main.startAdd()"><i class="material-icons right">send</i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- MERLOTS -->
+  <div id="test3" class="col s12">
+    <div ng-repeat='bottle in wine.bottles'>
+      <div ng-if="bottle.category === 'Merlot'">
+        <div class="col s12 m6">
+          <div class="card horizontal">
+            <div class="card-image">
+              <img src="{{bottle.label}}">
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <div class='col s10'>
+                  <p>Vineyard: {{bottle.vineyard}}</p>
+                  <p>Year: {{bottle.vintage}}</p>
+                </div>
+                <div class='col s2'>
+                  <button class="btn-floating red white-text" ui-sref="bottle" ui-sref-active='active' ng-click="main.startAdd()"><i class="material-icons right">send</i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
   <div class="col s4">
-    <button class="btn waves-effect waves-light red white-text" ui-sref="reds.add" ui-sref-active='active' ng-click="main.startAdd()">Add Item</button>
+    <button class="btn waves-effect waves-light red white-text" ui-sref="reds.add" ui-sref-active='active' ng-click="main.startAdd()">Add Bottle</button>
     <div ui-view></div>
   </div>
 </div>
