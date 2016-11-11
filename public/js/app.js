@@ -23,14 +23,14 @@
       url: '/cellar',
       templateUrl: '../partials/_cellar.html',
     })
-    // .state('about', {
-    //   url: '/about',
-    //   templateUrl: 'about.html',
-    // })
-    // .state('profile.changePass', {
-    //   url: '/changePass',
-    //   templateUrl: 'changePass.html'
-    // })
+    .state('reds', {
+      url: '/reds',
+      templateUrl: '../partials/_reds.html',
+    })
+    .state('whites', {
+      url: '/whites',
+      templateUrl: '../partials/_whites.html'
+    })
 
     $urlRouterProvider.otherwise('/');
 

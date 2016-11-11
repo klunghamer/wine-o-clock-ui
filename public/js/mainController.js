@@ -42,6 +42,7 @@
         }
         passAlert('<strong>Success!</strong> Welcome, ' + response.data.user.first_name + '.')
         self.user = response.data.user;
+        self.allBottles(self.user.id);
         console.log('token >>>', response.data.token);
         localStorage.setItem('token', JSON.stringify(response.data.token))
           $state.go('cellar', {url: '/cellar', user: response.data.user})
@@ -58,6 +59,14 @@
       localStorage.removeItem('token');
       warnAlert('You have been logged out.');
       $state.go('home', {url: '/'});
+    }
+
+    this.allBottles = function(id) {
+      console.log(id);
+      return $http({
+        url: `${rootUrl}/users/${id}/bottles`,
+        method: 'GET'
+      })
     }
 
     // FLASH

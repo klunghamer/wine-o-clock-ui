@@ -1,0 +1,25 @@
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('ul.tabs').tabs();
+  });
+</script>
+<div class="row">
+  <div class="col s12">
+    <ul class="tabs">
+      <li class="tab col s3"><a href="#test1">Pinot Noir</a></li>
+      <li class="tab col s3"><a class="active" href="#test2">Cabernet Sauvignon</a></li>
+      <li class="tab col s3"><a href="#test4">Merlot</a></li>
+      <li class="tab col s3"><a href="#test4">Syrah</a></li>
+      <li class="tab col s3"><a href="#test4">Malbec</a></li>
+      <li class="tab col s3"><a href="#test4">Zinfandel</a></li>
+      <li class="tab col s3"><a href="#test4">Blends | Other</a></li>
+    </ul>
+  </div>
+  <div id="test1" class="col s10">
+      <div id='find' ng-repeat="item in main.user.itemsToFind">
+        <div class="list-padding">{{item.name}}</div>
+        <div><a class="waves-effect waves-light btn-flat" ng-click="main.moveToCart(item, $index)">Done ?</a></div>
+        <div><a class="waves-effect waves-light btn-flat" ng-click="main.deleteFromToFind(item, $index)"><i class="material-icons right">close</i>Delete</a></div>
+      </div>
+    </div>
+</div>
