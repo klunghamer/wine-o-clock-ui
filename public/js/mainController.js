@@ -3,6 +3,7 @@
   .module('WineApp')
   .controller('WineController', function($http, $state, Flash){
     var self = this;
+    this.adding = false;
     var rootUrl = 'http://localhost:3000';
 
     this.signup = function(user) {
@@ -76,6 +77,10 @@
       })
     }
 
+    this.startAdding = function() {
+      this.adding = true;
+    }
+
     this.addBottle = function(bottle) {
       console.log(bottle);
       return $http({
@@ -91,12 +96,12 @@
           data: bottle
         })
         .then(function(response) {
-          // console.log(response);
-          // console.log(response.data.bottle.id);
           var id = response.data.bottle.id;
           bottle.id = id;
           self.bottles.push(bottle);
           console.log('update bottles>>', self.bottles);
+          this.adding = false;
+          $state.go('bottle', {url: '/bottle'});
         })
       })
     }

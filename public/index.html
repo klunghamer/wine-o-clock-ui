@@ -27,28 +27,28 @@
     <div ng-controller="WineController as wine">
       <div class="navbar-fixed">
             <ul id="dropdown1" class="dropdown-content">
-                <li><a ui-sref='home' ui-sref-active='active' class="red-text">Home</a></li>
+                <li><a ui-sref='home' ui-sref-active='active' class="red-text text-darken-4">Home</a></li>
               <div ng-hide="wine.user">
                 <li class="divider"></li>
-                <li><a ui-sref='signup' ui-sref-active='active' class="red-text">Sign up</a></li>
+                <li><a ui-sref='signup' ui-sref-active='active' class="red-text text-darken-4">Sign up</a></li>
                 <li class="divider"></li>
-                <li><a ui-sref='login' ui-sref-active='active' class="red-text">Log in</a></li>
+                <li><a ui-sref='login' ui-sref-active='active' class="red-text text-darken-4">Log in</a></li>
               </div>
               <div ng-show="wine.user">
                 <li class="divider"></li>
-                <li><a ui-sref='reds' ui-sref-active='active' class="red-text">Reds</a></li>
+                <li><a ui-sref='reds' ui-sref-active='active' class="red-text text-darken-4">Reds</a></li>
                 <li class="divider"></li>
-                <li><a ui-sref='whites' ui-sref-active='active' class="red-text">Whites</a></li>
+                <li><a ui-sref='whites' ui-sref-active='active' class="red-text text-darken-4">Whites</a></li>
                 <li class="divider"></li>
-                <li><a ui-sref='cellar' ui-sref-active='active' class="red-text">Cellar</a></li>
+                <li><a ui-sref='cellar' ui-sref-active='active' class="red-text text-darken-4">Cellar</a></li>
               </div>
               <div ng-show="wine.user">
                 <li class="divider"></li>
-                <li><a ng-click="wine.logout()" class="red-text">Log out</a></li>
+                <li><a ng-click="wine.logout()" class="red-text text-darken-4">Log out</a></li>
               </div>
             </ul>
             <nav>
-              <div class="nav-wrapper red">
+              <div class="nav-wrapper red darken-4">
                 <a href="#!" class="brand-logo">Wine O'Clock</a>
                 <ul class="right">
                   <li class='nav-link hide-on-small-only' ng-show="wine.user">Welcome, {{wine.user.first_name}}</li>
