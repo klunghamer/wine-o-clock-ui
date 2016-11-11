@@ -51,12 +51,25 @@
       })
     }
 
+    this.logout = function() {
+      self.user = null;
+      self.success = null;
+      self.repeatText = "";
+      localStorage.removeItem('token');
+      warnAlert('You have been logged out.');
+      $state.go('home', {url: '/'});
+    }
+
     // FLASH
     function passAlert(msg){
       var id = Flash.create('success', msg, 7000, {class: 'flashAlert'}, true);
     }
     function failAlert(msg){
       var id = Flash.create('danger', msg, 7000, {class: 'flashAlert'}, true);
+    }
+
+    function warnAlert(msg){
+      var id = Flash.create('warning', msg, 7000, {class: 'flashAlert'}, true);
     }
 
   }); //controller closure

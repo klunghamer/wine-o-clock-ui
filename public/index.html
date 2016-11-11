@@ -27,30 +27,47 @@
       <div class="navbar-fixed">
             <ul id="dropdown1" class="dropdown-content">
                 <li><a ui-sref='home' ui-sref-active='active' class="red-text">Home</a></li>
-              <!-- <div ng-hide="main.user"> -->
+              <div ng-hide="wine.user">
                 <li class="divider"></li>
                 <li><a ui-sref='signup' ui-sref-active='active' class="red-text">Sign up</a></li>
                 <li class="divider"></li>
                 <li><a ui-sref='login' ui-sref-active='active' class="red-text">Log in</a></li>
-              <!-- </div> -->
-              <!-- <div ng-show="main.user"> -->
+              </div>
+              <div ng-show="wine.user">
                 <li class="divider"></li>
-                <li><a ng-click="main.logout(main.user)" class="red-text">Log out</a></li>
-              <!-- </div> -->
-              <!-- <div ng-show="main.user"> -->
+                <li><a ng-click="wine.logout()" class="red-text">Log out</a></li>
+              </div>
+              <div ng-show="wine.user">
                 <li class="divider"></li>
                 <li><a ui-sref='cellar' ui-sref-active='active' class="red-text">Cellar</a></li>
-              <!-- </div> -->
+              </div>
             </ul>
-            <nav>
+            <span ng-show="wine.user"><nav class="nav-extended right">
               <div class="nav-wrapper red">
-                <a href="#!" class="brand-logo center">Wine O'Clock</a>
+                <a href="#!" class="brand-logo">Wine O'Clock</a>
                 <ul class="right">
-                  <li class='nav-link hide-on-small-only' ng-show="main.user">Welcome, {{main.user.username}}</li>
-                  <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>
+                  <li class='nav-link hide-on-small-only' ng-show="wine.user">Welcome, {{wine.user.first_name}}</li>
+                  <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Account<i class="material-icons right">arrow_drop_down_circle</i></a></li>
+                </ul>
+                <ul class="tabs tabs-transparent">
+                  <li class="tab"><a href="#test1">Reds</a></li>
+                  <li class="tab"><a class="active" href="#test2">Whites</a></li>
                 </ul>
               </div>
-            </nav>
+            </nav></span>
+            <span ng-hide="wine.user"><nav>
+              <div class="nav-wrapper red">
+                <a href="#!" class="brand-logo">Wine O'Clock</a>
+                <ul class="right">
+                  <li class='nav-link hide-on-small-only' ng-show="wine.user">Welcome, {{wine.user.first_name}}</li>
+                  <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Account<i class="material-icons right">arrow_drop_down_circle</i></a></li>
+                </ul>
+                <ul class="tabs tabs-transparent">
+                  <li class="tab"><a href="#test1">Reds</a></li>
+                  <li class="tab"><a class="active" href="#test2">Whites</a></li>
+                </ul>
+              </div>
+            </nav></span>
           </div>
       <div ui-view></div>
     </div>
