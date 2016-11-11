@@ -61,11 +61,29 @@
       $state.go('home', {url: '/'});
     }
 
+    this.addBottle = function(bottle) {
+      console.log(bottle);
+      return $http({
+        url: `${rootUrl}/bottles/results/${bottle.search}`,
+        method: 'GET'
+      })
+      .then(function(response) {
+        console.log(response);
+      })
+    }
+
     this.allBottles = function(id) {
       console.log(id);
       return $http({
         url: `${rootUrl}/users/${id}/bottles`,
         method: 'GET'
+      })
+      .then(function(response) {
+        console.log(response);
+        self.bottles = response.data.bottles;
+      })
+      .catch(function(err) {
+        console.log(err);
       })
     }
 

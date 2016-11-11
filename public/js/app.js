@@ -31,6 +31,10 @@
       url: '/whites',
       templateUrl: '../partials/_whites.html'
     })
+    .state('reds.add', {
+      url: '/add',
+      templateUrl: '../partials/_add.html'
+    })
 
     $urlRouterProvider.otherwise('/');
 

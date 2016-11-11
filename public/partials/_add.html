@@ -1,0 +1,14 @@
+<div class="container">
+  <h4>Add Item:</h4>
+  <div class="row">
+      <form class="col s12" ng-submit="wine.addBottle(bottle)">
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <input type="text" class="validate" ng-model="bottle.search">
+            <label for="botle">Bottle info</label>
+          </div>
+        </div>
+        <button class="btn waves-effect waves-light red" type="submit" name="action">Add Bottle</button>
+        <!-- <button class="btn waves-effect waves-light grey" ui-sref="list" ng-click="main.back()">Back</button> -->
+      </form>
+</div>
