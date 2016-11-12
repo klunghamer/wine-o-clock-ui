@@ -43,6 +43,10 @@
       url: '/bottle',
       templateUrl: '../partials/_bottle.html',
     })
+    .state('bottle.update', {
+      url: '/update',
+      templateUrl: '../partials/_update.html',
+    })
 
     $urlRouterProvider.otherwise('/');
 

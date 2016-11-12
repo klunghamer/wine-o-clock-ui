@@ -1,0 +1,31 @@
+<div class="container">
+  <h5>Update Bottle:</h5>
+  <div class="row">
+    <form class="col s12" ng-submit="wine.updateBottle(wine.bottle, wine.bottle.id)">
+      <div class="row">
+        <div class="input-field col s12 m6">
+          <input type="text" class="validate" ng-model="wine.bottle.vineyard">
+          <label for="bottle" class="active">Vineyard</label>
+        </div>
+        <div class="input-field col s12 m6">
+          <input type="text" class="validate" ng-model="wine.bottle.vintage">
+          <label for="bottle" class="active">Vintage</label>
+        </div>
+        <div class="input-field col s12 m6">
+          <input type="text" class="validate" ng-model="wine.bottle.region">
+          <label for="bottle" class="active">Region</label>
+        </div>
+        <div class="input-field col s12 m6">
+          <input type="text" class="validate" ng-model="wine.bottle.appellation">
+          <label for="bottle" class="active">Appellation</label>
+        </div>
+        <div class="input-field col s12 m6">
+          <input type="text" class="validate" ng-model="wine.bottle.retail_price">
+          <label for="bottle" class="active">Retail Price</label>
+        </div>
+      </div>
+      <button class="btn waves-effect waves-light red left" type="submit" name="action">Submit</button>
+      <!-- <button class="btn waves-effect waves-light grey" ui-sref="list" ng-click="main.back()">Back</button> -->
+    </form>
+  </div>
+</div>
