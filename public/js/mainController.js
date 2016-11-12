@@ -4,7 +4,8 @@
   .controller('WineController', function($http, $state, Flash){
     var self = this;
     this.adding = false;
-    var rootUrl = 'http://localhost:3000';
+    // var rootUrl = 'http://localhost:3000';
+    var rootUrl = 'https://wine-o-clock-api.herokuapp.com';
 
     this.signup = function(user) {
       console.log(user);
