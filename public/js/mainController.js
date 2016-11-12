@@ -103,9 +103,9 @@
           console.log('update bottles>>', self.bottles);
           self.adding = false;
           if (response.data.bottle.red_or_white === 'Red Wines') {
-            $state.go('reds', {url: '/bottle'});
+            $state.go('reds', {url: '/reds'});
           } else {
-            $state.go('whites', {url: '/bottle'});
+            $state.go('whites', {url: '/whites'});
           }
         })
         .catch(function(err) {
@@ -139,10 +139,13 @@
     this.updateBottle = function(bottle, id) {
       console.log(bottle);
       return $http({
-        url: `${rootUrl}/users/${self.user.id}/bottles/${id}`
+        url: `${rootUrl}/users/${self.user.id}/bottles/${id}`,
+        method: 'PATCH',
+        data: {bottle: bottle}
       })
       .then(function(response) {
         console.log(response);
+        $state.go('bottle', {url: '/bottle'});
       })
       .catch(function(err) {
         console.log(err);
