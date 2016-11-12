@@ -6,15 +6,178 @@
 <div class="row">
   <div class="col s12">
     <ul class="tabs">
-      <li class="tab col s3"><a href="#test1">Chardonnay</a></li>
-      <li class="tab col s3"><a class="active" href="#test2">Sauvignon Blanc</a></li>
-      <li class="tab col s3"><a href="#test4">Riesling</a></li>
-      <li class="tab col s3"><a href="#test4">Pinot Grigio</a></li>
-      <li class="tab col s3"><a href="#test4">Blends | Other</a></li>
+      <li class="tab col s3 m2"><a href="#wine1">Chardonnay</a></li>
+      <li class="tab col s3 m2"><a href="#wine2">Sauvignon Blanc</a></li>
+      <li class="tab col s3 m2"><a href="#wine3">Chenin Blanc</a></li>
+      <li class="tab col s3 m2"><a href="#wine4">Riesling</a></li>
+      <li class="tab col s3 m2"><a href="#wine5">Pinot Grigio</a></li>
+      <li class="tab col s3 m2"><a href="#wine6">Blends | Other</a></li>
     </ul>
   </div>
-  <div id="test1" class="col s12">Test 1</div>
-  <div id="test2" class="col s12">Test 2</div>
-  <div id="test3" class="col s12">Test 3</div>
-  <div id="test4" class="col s12">Test 4</div>
+</div>
+
+<div class='container'>
+<div class='row'>
+<!-- CHARDONNAY   -->
+  <div id="wine1" class="col s12">
+    <div ng-repeat='bottle in wine.bottles'>
+      <div ng-if="bottle.category === 'Chardonnay'">
+        <div class="col s12 m6">
+          <div class="card horizontal">
+            <div class="card-image">
+              <img src="{{bottle.label}}">
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <div class='col s10'>
+                  <p>Vineyard: {{bottle.vineyard}}</p>
+                  <p>Year: {{bottle.vintage}}</p>
+                </div>
+                <div class='col s2'>
+                  <button class="btn-floating red white-text" ui-sref="bottle" ui-sref-active='active' ng-click="main.startAdd()"><i class="material-icons right" ng-click="wine.showBottle(bottle)">send</i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- SAUVIGNON BLANC  -->
+  <div id="wine2" class="col s12">
+    <div ng-repeat='bottle in wine.bottles'>
+      <div ng-if="bottle.category === 'Sauvignon Blanc'">
+        <div class="col s12 m6">
+          <div class="card horizontal">
+            <div class="card-image">
+              <img src="{{bottle.label}}">
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <div class='col s10'>
+                  <p>Vineyard: {{bottle.vineyard}}</p>
+                  <p>Year: {{bottle.vintage}}</p>
+                </div>
+                <div class='col s2'>
+                  <button class="btn-floating red white-text" ui-sref="bottle" ui-sref-active='active' ng-click="main.startAdd()"><i class="material-icons right" ng-click="wine.showBottle(bottle)">send</i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- CHENIN BLANC -->
+  <div id="wine3" class="col s12">
+    <div ng-repeat='bottle in wine.bottles'>
+      <div ng-if="bottle.category === 'Chenin Blanc'">
+        <div class="col s12 m6">
+          <div class="card horizontal">
+            <div class="card-image">
+              <img src="{{bottle.label}}">
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <div class='col s10'>
+                  <p>Vineyard: {{bottle.vineyard}}</p>
+                  <p>Year: {{bottle.vintage}}</p>
+                </div>
+                <div class='col s2'>
+                  <button class="btn-floating red white-text" ui-sref="bottle" ui-sref-active='active' ng-click="main.startAdd()"><i class="material-icons right" ng-click="wine.showBottle(bottle)">send</i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Riesling-->
+  <div id="wine4" class="col s12">
+    <div ng-repeat='bottle in wine.bottles'>
+      <div ng-if="bottle.category === 'Riesling'">
+        <div class="col s12 m6">
+          <div class="card horizontal">
+            <div class="card-image">
+              <img src="{{bottle.label}}">
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <div class='col s10'>
+                  <p>Vineyard: {{bottle.vineyard}}</p>
+                  <p>Year: {{bottle.vintage}}</p>
+                </div>
+                <div class='col s2'>
+                  <button class="btn-floating red white-text" ui-sref="bottle" ui-sref-active='active' ng-click="main.startAdd()"><i class="material-icons right" ng-click="wine.showBottle(bottle)">send</i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PINOT GRIGIO -->
+<div id="wine5" class="col s12">
+  <div ng-repeat='bottle in wine.bottles'>
+    <div ng-if="bottle.category === 'Pinot Grigio'">
+      <div class="col s12 m6">
+        <div class="card horizontal">
+          <div class="card-image">
+            <img src="{{bottle.label}}">
+          </div>
+          <div class="card-stacked">
+            <div class="card-content">
+              <div class='col s10'>
+                <p>Vineyard: {{bottle.vineyard}}</p>
+                <p>Year: {{bottle.vintage}}</p>
+              </div>
+              <div class='col s2'>
+                <button class="btn-floating red white-text" ui-sref="bottle" ui-sref-active='active' ng-click="main.startAdd()"><i class="material-icons right" ng-click="wine.showBottle(bottle)">send</i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OTHER -->
+<div id="wine6" class="col s12">
+  <div ng-repeat='bottle in wine.bottles'>
+    <div ng-if="bottle.red_or_white === 'White Wines' && bottle.category !== 'Chardonnay' && bottle.category !== 'Sauvignon Blanc' && bottle.category !== 'Chenin Blanc' && bottle.category !== 'Riesling' && bottle.category !== 'Pinot Grigio'">
+      <div class="col s12 m6">
+        <div class="card horizontal">
+          <div class="card-image">
+            <img src="{{bottle.label}}">
+          </div>
+          <div class="card-stacked">
+            <div class="card-content">
+              <div class='col s10'>
+                <p>Vineyard: {{bottle.vineyard}}</p>
+                <p>Year: {{bottle.vintage}}</p>
+              </div>
+              <div class='col s2'>
+                <button class="btn-floating red white-text" ui-sref="bottle" ui-sref-active='active' ng-click="main.startAdd()"><i class="material-icons right" ng-click="wine.showBottle(bottle)">send</i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+  <div class="col s4">
+    <button class="btn waves-effect waves-light red white-text" ui-sref="whites.add" ui-sref-active='active' ng-click="wine.startAdding()" ng-hide="wine.adding">Add Bottle</button>
+    <div ui-view></div>
+  </div>
 </div>

@@ -1,1 +1,19 @@
-bottle!
+<div class="container">
+  <h3>{{wine.bottle.category}}</h3>
+  <h2>{{wine.message}}</h2>
+  <div ng-hide="wine.message">
+    <div class="col s12 m6">
+      <img class="responsive-img" src="{{wine.bottle.label}}"/>
+    </div>
+    <div class="col s12 m6">
+      <p>Vineyard: {{wine.bottle.vineyard}}</p>
+      <p>Vintage: {{wine.bottle.vintage}}</p>
+      <p>Region: {{wine.bottle.region}}</p>
+      <p>Appellation: {{wine.bottle.appellation}}</p>
+      <p>Retail price: {{wine.bottle.retail_price | currency}}</p>
+    </div>
+    <div class="row">
+      <button class="btn waves-effect waves-light red white-text" ng-click="wine.deleteBottle(wine.bottle.id)">Delete</button>
+    </div>
+  </div>
+</div>

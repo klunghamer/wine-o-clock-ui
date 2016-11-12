@@ -100,9 +100,38 @@
           bottle.id = id;
           self.bottles.push(bottle);
           console.log('update bottles>>', self.bottles);
-          this.adding = false;
-          $state.go('bottle', {url: '/bottle'});
+          self.adding = false;
+          if (response.data.bottle.red_or_white === 'Red Wines') {
+            $state.go('reds', {url: '/bottle'});
+          } else {
+            $state.go('whites', {url: '/bottle'});
+          }
         })
+        .catch(function(err) {
+          console.log(err);
+        })
+      })
+    }
+
+    this.showBottle = function(bottle) {
+      console.log(bottle);
+      self.bottle = bottle;
+    }
+
+    this.deleteBottle = function(id) {
+      console.log(id);
+      console.log(self.user.id);
+      return $http({
+        url: `${rootUrl}/users/${self.user.id}/bottles/${id}`,
+        method: 'DELETE'
+      })
+      .then(function(response) {
+        self.message = 'Bottle Deleted!';
+        self.bottle = {};
+        console.log(response);
+      })
+      .catch(function(err) {
+        console.log(err);
       })
     }
 

@@ -6,7 +6,7 @@
 <div class="row">
   <div class="col s12">
     <ul class="tabs">
-      <li class="tab col s3 m2"><a class="active" href="#test1">Pinot Noir</a></li>
+      <li class="tab col s3 m2"><a href="#test1">Pinot Noir</a></li>
       <li class="tab col s3 m2"><a href="#test2">Cabernet Sauvignon</a></li>
       <li class="tab col s3 m2"><a href="#test3">Merlot</a></li>
       <li class="tab col s3 m2"><a href="#test4">Syrah</a></li>
@@ -35,7 +35,7 @@
                   <p>Year: {{bottle.vintage}}</p>
                 </div>
                 <div class='col s2'>
-                  <button class="btn-floating red white-text" ui-sref="bottle" ui-sref-active='active' ng-click="main.startAdd()"><i class="material-icons right">send</i></button>
+                  <button class="btn-floating red white-text" ui-sref="bottle" ui-sref-active='active' ng-click="wine.showBottle(bottle)"><i class="material-icons right">send</i></button>
                 </div>
               </div>
             </div>
@@ -61,7 +61,7 @@
                   <p>Year: {{bottle.vintage}}</p>
                 </div>
                 <div class='col s2'>
-                  <button class="btn-floating red white-text" ui-sref="bottle" ui-sref-active='active' ng-click="main.startAdd()"><i class="material-icons right">send</i></button>
+                  <button class="btn-floating red white-text" ui-sref="bottle" ui-sref-active='active'><i class="material-icons right" ng-click="wine.showBottle(bottle)">send</i></button>
                 </div>
               </div>
             </div>
@@ -87,7 +87,7 @@
                   <p>Year: {{bottle.vintage}}</p>
                 </div>
                 <div class='col s2'>
-                  <button class="btn-floating red white-text" ui-sref="bottle" ui-sref-active='active' ng-click="main.startAdd()"><i class="material-icons right">send</i></button>
+                  <button class="btn-floating red white-text" ui-sref="bottle" ui-sref-active='active'><i class="material-icons right" ng-click="wine.showBottle(bottle)">send</i></button>
                 </div>
               </div>
             </div>
@@ -113,7 +113,7 @@
                   <p>Year: {{bottle.vintage}}</p>
                 </div>
                 <div class='col s2'>
-                  <button class="btn-floating red white-text" ui-sref="bottle" ui-sref-active='active' ng-click="main.startAdd()"><i class="material-icons right">send</i></button>
+                  <button class="btn-floating red white-text" ui-sref="bottle" ui-sref-active='active'><i class="material-icons right" ng-click="wine.showBottle(bottle)">send</i></button>
                 </div>
               </div>
             </div>
@@ -139,7 +139,7 @@
                 <p>Year: {{bottle.vintage}}</p>
               </div>
               <div class='col s2'>
-                <button class="btn-floating red white-text" ui-sref="bottle" ui-sref-active='active' ng-click="main.startAdd()"><i class="material-icons right">send</i></button>
+                <button class="btn-floating red white-text" ui-sref="bottle" ui-sref-active='active'><i class="material-icons right" ng-click="wine.showBottle(bottle)">send</i></button>
               </div>
             </div>
           </div>
@@ -165,7 +165,7 @@
                 <p>Year: {{bottle.vintage}}</p>
               </div>
               <div class='col s2'>
-                <button class="btn-floating red white-text" ui-sref="bottle" ui-sref-active='active' ng-click="main.startAdd()"><i class="material-icons right">send</i></button>
+                <button class="btn-floating red white-text" ui-sref="bottle" ui-sref-active='active'><i class="material-icons right" ng-click="wine.showBottle(bottle)">send</i></button>
               </div>
             </div>
           </div>
@@ -176,9 +176,9 @@
 </div>
 
 <!-- OTHER -->
-<!-- <div id="test7" class="col s12">
+<div id="test7" class="col s12">
   <div ng-repeat='bottle in wine.bottles'>
-    <div ng-if="bottle.category !== 'Zinfandel' || bottle.category !== 'Merlot'">
+    <div ng-if="bottle.red_or_white === 'Red Wines' && bottle.category !== 'Zinfandel' && bottle.category !== 'Pinot Noir' && bottle.category !== 'Cabernet Sauvignon' && bottle.category !== 'Merlot' && bottle.category !== 'Syrah/Shiraz' && bottle.category !== 'Malbec'">
       <div class="col s12 m6">
         <div class="card horizontal">
           <div class="card-image">
@@ -191,7 +191,7 @@
                 <p>Year: {{bottle.vintage}}</p>
               </div>
               <div class='col s2'>
-                <button class="btn-floating red white-text" ui-sref="bottle" ui-sref-active='active' ng-click="main.startAdd()"><i class="material-icons right">send</i></button>
+                <button class="btn-floating red white-text" ui-sref="bottle" ui-sref-active='active'><i class="material-icons right" ng-click="wine.showBottle(bottle)">send</i></button>
               </div>
             </div>
           </div>
@@ -199,7 +199,7 @@
       </div>
     </div>
   </div>
-</div> -->
+</div>
 
 </div>
   <div class="col s4">
