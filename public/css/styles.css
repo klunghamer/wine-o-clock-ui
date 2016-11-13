@@ -1,6 +1,53 @@
+html {
+  font-family: 'Vesper Libre', serif;
+  color: #b71c1c;
+}
+
+
 #footnoteid {
   position: fixed;
   bottom: 0;
   width: 100%;
   z-index: 2;
+}
+
+body {
+  background-image: url('https://images.freecreatives.com/wp-content/uploads/2016/02/Light-Parchment-Texture.jpg');
+}
+
+/*INPUT FIELDS*/
+.input-field label {
+  color: #b71c1c;
+}
+
+.input-field input[type=text]:focus + label {
+  color: #b71c1c;
+}
+
+.input-field input[type=password]:focus + label {
+  color: #b71c1c;
+}
+
+.input-field input[type=email]:focus + label {
+  color: #b71c1c;
+}
+
+.input-field input[type=password]:focus {
+ border-bottom: 1px solid #b71c1c;
+ box-shadow: 0 1px 0 0 #b71c1c;
+}
+
+.input-field input[type=text]:focus {
+ border-bottom: 1px solid #b71c1c;
+ box-shadow: 0 1px 0 0 #b71c1c;
+}
+
+.input-field input[type=email]:focus {
+ border-bottom: 1px solid #b71c1c;
+ box-shadow: 0 1px 0 0 #b71c1c;
+}
+
+#bottom-nav {
+  position: fixed;
+  bottom: 0;
 }

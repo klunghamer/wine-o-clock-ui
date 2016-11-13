@@ -1,7 +1,7 @@
 <div class="container">
-  <h5>Update Bottle:</h5>
+  <h5>Edit Bottle:</h5>
   <div class="row">
-    <form class="col s12" ng-submit="wine.updateBottle(wine.bottle, wine.bottle.id)">
+    <form class="col s12 black-text" ng-submit="wine.updateBottle(wine.bottle, wine.bottle.id)">
       <div class="row">
         <div class="input-field col s12 m6">
           <input type="text" class="validate" ng-model="wine.bottle.vineyard">
@@ -24,8 +24,10 @@
           <label for="bottle" class="active">Retail Price</label>
         </div>
       </div>
-      <button class="btn waves-effect waves-light red left" type="submit" name="action">Submit</button>
-      <!-- <button class="btn waves-effect waves-light grey" ui-sref="list" ng-click="main.back()">Back</button> -->
+      <div class="row">
+        <button class="btn waves-effect waves-light red darken-4" type="submit">Submit</button>
+        <button id="back-update" class="btn waves-effect waves-light grey" ui-sref="bottle">Back</button>
+      </div>
     </form>
   </div>
 </div>

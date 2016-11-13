@@ -4,8 +4,8 @@
   .controller('WineController', function($http, $state, Flash){
     var self = this;
     this.adding = false;
-    var rootUrl = 'http://localhost:3000';
-    // var rootUrl = 'https://wine-o-clock-api.herokuapp.com';
+    // var rootUrl = 'http://localhost:3000';
+    var rootUrl = 'https://wine-o-clock-api.herokuapp.com';
 
     this.signup = function(user) {
       console.log(user);
@@ -127,8 +127,10 @@
         method: 'DELETE'
       })
       .then(function(response) {
-        self.message = 'Bottle Deleted!';
+        // self.message = 'Bottle Deleted!';
         self.bottle = {};
+        $state.go('cellar', {url: '/cellar'});
+        warnAlert('Bottle deleted!')
         console.log(response);
       })
       .catch(function(err) {
@@ -137,7 +139,7 @@
     }
 
     this.updateBottle = function(bottle, id) {
-      console.log(bottle);
+      // console.log(bottle);
       return $http({
         url: `${rootUrl}/users/${self.user.id}/bottles/${id}`,
         method: 'PATCH',
@@ -159,10 +161,12 @@
     function failAlert(msg){
       var id = Flash.create('danger', msg, 7000, {class: 'flashAlert'}, true);
     }
-
     function warnAlert(msg){
       var id = Flash.create('warning', msg, 7000, {class: 'flashAlert'}, true);
     }
+    // function deleteAlert(msg){
+    //   var id = Flash.create('delete', msg, 7000, {class: 'flashAlert'}, true);
+    // }
 
   }); //controller closure
 })()

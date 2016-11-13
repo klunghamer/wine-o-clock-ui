@@ -1,23 +1,31 @@
 <div class="container">
   <h3>{{wine.bottle.category}}</h3>
   <h2>{{wine.message}}</h2>
-  <div ng-hide="wine.message">
+  <!-- <div ng-hide="wine.message"> -->
     <div class="col s12 m6">
       <img class="responsive-img" src="{{wine.bottle.label}}"/>
     </div>
-    <div class="col s12 m6">
+    <div class="col s12 m6 black-text">
       <p>Vineyard: {{wine.bottle.vineyard}}</p>
       <p>Vintage: {{wine.bottle.vintage}}</p>
       <p>Region: {{wine.bottle.region}}</p>
       <p>Appellation: {{wine.bottle.appellation}}</p>
       <p>Retail price: {{wine.bottle.retail_price | currency}}</p>
     </div>
+    <div class="row">
+      <button class="btn waves-effect waves-light red darken-4 white-text" ng-click="wine.deleteBottle(wine.bottle.id)">Delete</button>
+      <button class="btn waves-effect waves-light blue lighten-2 white-text" ui-sref="bottle.update">Edit</button>
+    </div>
+  <!-- </div> -->
+  <div class="col s6">
+    <div ui-view class="col s6"></div>
   </div>
-    <div class="row">
-      <button class="btn waves-effect waves-light grey white-text" ng-click="wine.deleteBottle(wine.bottle.id)" ng-hide='wine.message'>Delete</button>
-      <button class="btn waves-effect waves-light blue white-text" ui-sref="bottle.update">Update</button>
-    </div>
-    <div class="row">
-      <div ui-view></div>
-    </div>
 </div>
+<!-- <nav id="bottom-nav" class="red darken-4">
+  <div class="nav-wrapper">
+    <ul id="nav-mobile">
+      <li><a ui-sref="reds">Reds</a></li>
+      <li><a ui-sref="whites">Whites</a></li>
+    </ul>
+  </div>
+</nav> -->

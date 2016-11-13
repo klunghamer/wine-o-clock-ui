@@ -29,12 +29,12 @@
             </div>
             <div class="card-stacked">
               <div class="card-content">
-                <div class='col s10'>
+                <div class='col s10 black-text'>
                   <p>Vineyard: {{bottle.vineyard}}</p>
                   <p>Year: {{bottle.vintage}}</p>
                 </div>
                 <div class='col s2'>
-                  <button class="btn-floating red white-text" ui-sref="bottle" ui-sref-active='active' ng-click="main.startAdd()"><i class="material-icons right" ng-click="wine.showBottle(bottle)">send</i></button>
+                  <button class="btn-floating red darken-4 white-text" ui-sref="bottle" ui-sref-active='active' ng-click="main.startAdd()"><i class="material-icons right" ng-click="wine.showBottle(bottle)">send</i></button>
                 </div>
               </div>
             </div>
@@ -55,12 +55,12 @@
             </div>
             <div class="card-stacked">
               <div class="card-content">
-                <div class='col s10'>
+                <div class='col s10 black-text'>
                   <p>Vineyard: {{bottle.vineyard}}</p>
                   <p>Year: {{bottle.vintage}}</p>
                 </div>
                 <div class='col s2'>
-                  <button class="btn-floating red white-text" ui-sref="bottle" ui-sref-active='active' ng-click="main.startAdd()"><i class="material-icons right" ng-click="wine.showBottle(bottle)">send</i></button>
+                  <button class="btn-floating red darken-4 white-text" ui-sref="bottle" ui-sref-active='active' ng-click="main.startAdd()"><i class="material-icons right" ng-click="wine.showBottle(bottle)">send</i></button>
                 </div>
               </div>
             </div>
@@ -81,12 +81,12 @@
             </div>
             <div class="card-stacked">
               <div class="card-content">
-                <div class='col s10'>
+                <div class='col s10 black-text'>
                   <p>Vineyard: {{bottle.vineyard}}</p>
                   <p>Year: {{bottle.vintage}}</p>
                 </div>
                 <div class='col s2'>
-                  <button class="btn-floating red white-text" ui-sref="bottle" ui-sref-active='active' ng-click="main.startAdd()"><i class="material-icons right" ng-click="wine.showBottle(bottle)">send</i></button>
+                  <button class="btn-floating red darken-4 white-text" ui-sref="bottle" ui-sref-active='active' ng-click="main.startAdd()"><i class="material-icons right" ng-click="wine.showBottle(bottle)">send</i></button>
                 </div>
               </div>
             </div>
@@ -107,12 +107,12 @@
             </div>
             <div class="card-stacked">
               <div class="card-content">
-                <div class='col s10'>
+                <div class='col s10 black-text'>
                   <p>Vineyard: {{bottle.vineyard}}</p>
                   <p>Year: {{bottle.vintage}}</p>
                 </div>
                 <div class='col s2'>
-                  <button class="btn-floating red white-text" ui-sref="bottle" ui-sref-active='active' ng-click="main.startAdd()"><i class="material-icons right" ng-click="wine.showBottle(bottle)">send</i></button>
+                  <button class="btn-floating red darken-4 white-text" ui-sref="bottle" ui-sref-active='active' ng-click="main.startAdd()"><i class="material-icons right" ng-click="wine.showBottle(bottle)">send</i></button>
                 </div>
               </div>
             </div>
@@ -125,7 +125,7 @@
   <!-- PINOT GRIGIO -->
 <div id="wine5" class="col s12">
   <div ng-repeat='bottle in wine.bottles'>
-    <div ng-if="bottle.category === 'Pinot Grigio'">
+    <div ng-if="bottle.category === 'Pinot Gris/Grigio'">
       <div class="col s12 m6">
         <div class="card horizontal">
           <div class="card-image">
@@ -133,12 +133,12 @@
           </div>
           <div class="card-stacked">
             <div class="card-content">
-              <div class='col s10'>
+              <div class='col s10 black-text'>
                 <p>Vineyard: {{bottle.vineyard}}</p>
                 <p>Year: {{bottle.vintage}}</p>
               </div>
               <div class='col s2'>
-                <button class="btn-floating red white-text" ui-sref="bottle" ui-sref-active='active' ng-click="main.startAdd()"><i class="material-icons right" ng-click="wine.showBottle(bottle)">send</i></button>
+                <button class="btn-floating red darken-4 white-text" ui-sref="bottle" ui-sref-active='active' ng-click="main.startAdd()"><i class="material-icons right" ng-click="wine.showBottle(bottle)">send</i></button>
               </div>
             </div>
           </div>
@@ -151,7 +151,7 @@
 <!-- OTHER -->
 <div id="wine6" class="col s12">
   <div ng-repeat='bottle in wine.bottles'>
-    <div ng-if="bottle.red_or_white === 'White Wines' && bottle.category !== 'Chardonnay' && bottle.category !== 'Sauvignon Blanc' && bottle.category !== 'Chenin Blanc' && bottle.category !== 'Riesling' && bottle.category !== 'Pinot Grigio'">
+    <div ng-if="bottle.red_or_white === 'White Wines' && bottle.category !== 'Chardonnay' && bottle.category !== 'Sauvignon Blanc' && bottle.category !== 'Chenin Blanc' && bottle.category !== 'Riesling' && bottle.category !== 'Pinot Gris/Grigio'">
       <div class="col s12 m6">
         <div class="card horizontal">
           <div class="card-image">
@@ -159,12 +159,12 @@
           </div>
           <div class="card-stacked">
             <div class="card-content">
-              <div class='col s10'>
+              <div class='col s10 black-text'>
                 <p>Vineyard: {{bottle.vineyard}}</p>
                 <p>Year: {{bottle.vintage}}</p>
               </div>
               <div class='col s2'>
-                <button class="btn-floating red white-text" ui-sref="bottle" ui-sref-active='active' ng-click="main.startAdd()"><i class="material-icons right" ng-click="wine.showBottle(bottle)">send</i></button>
+                <button class="btn-floating red darken-4 white-text" ui-sref="bottle" ui-sref-active='active' ng-click="main.startAdd()"><i class="material-icons right" ng-click="wine.showBottle(bottle)">send</i></button>
               </div>
             </div>
           </div>
@@ -177,7 +177,7 @@
 
 </div>
   <div class="col s4">
-    <button class="btn waves-effect waves-light red white-text" ui-sref="whites.add" ui-sref-active='active' ng-click="wine.startAdding()" ng-hide="wine.adding">Add Bottle</button>
+    <button class="btn waves-effect waves-light red darken-4 white-text" ui-sref="whites.add" ui-sref-active='active' ng-click="wine.startAdding()" ng-hide="wine.adding">Add Bottle</button>
     <div ui-view></div>
   </div>
 </div>
