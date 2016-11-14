@@ -1,11 +1,11 @@
 (function(){
   angular
   .module('WineApp')
-  .controller('WineController', function($http, $state, Flash){
+  .controller('WineController', function($http, $state, Flash, Upload, $scope){
     var self = this;
     this.adding = false;
-    // var rootUrl = 'http://localhost:3000';
-    var rootUrl = 'https://wine-o-clock-api.herokuapp.com';
+    var rootUrl = 'http://localhost:3000';
+    // var rootUrl = 'https://wine-o-clock-api.herokuapp.com';
 
     this.signup = function(user) {
       console.log(user);
@@ -114,9 +114,17 @@
       })
     }
 
-    this.showBottle = function(bottle) {
-      console.log(bottle);
-      self.bottle = bottle;
+    this.showBottle = function(id) {
+      console.log(id);
+      return $http({
+        url: `${rootUrl}/users/${self.user.id}/bottles/${id}`,
+        method: 'GET'
+      })
+      .then(function(response) {
+        console.log(response);
+        self.bottle = response.data.bottle;
+        self.image = response.data.image;
+      })
     }
 
     this.deleteBottle = function(id) {
@@ -127,7 +135,6 @@
         method: 'DELETE'
       })
       .then(function(response) {
-        // self.message = 'Bottle Deleted!';
         self.bottle = {};
         $state.go('cellar', {url: '/cellar'});
         warnAlert('Bottle deleted!')
@@ -154,6 +161,22 @@
       })
     }
 
+    this.changeLabel = function(image, id) {
+      console.log(image);
+      console.log(id);
+      image.upload = Upload.upload({
+        url: `${rootUrl}/users/${self.user.id}/bottles/${id}`,
+        method: 'PATCH',
+        data: {bottle: {image: image}}
+      })
+      .then(function(response) {
+        console.log(response);
+        self.showBottle(id);
+        $state.go('bottle', {url: '/bottle'});
+      })
+    }
+
+
     // FLASH
     function passAlert(msg){
       var id = Flash.create('success', msg, 7000, {class: 'flashAlert'}, true);
@@ -164,9 +187,6 @@
     function warnAlert(msg){
       var id = Flash.create('warning', msg, 7000, {class: 'flashAlert'}, true);
     }
-    // function deleteAlert(msg){
-    //   var id = Flash.create('delete', msg, 7000, {class: 'flashAlert'}, true);
-    // }
 
   }); //controller closure
 })()

@@ -1,7 +1,7 @@
 <div class="container">
   <h5>Edit Bottle:</h5>
   <div class="row">
-    <form class="col s12 black-text" ng-submit="wine.updateBottle(wine.bottle, wine.bottle.id)">
+    <form class="col s12 m6 black-text" ng-submit="wine.updateBottle(wine.bottle, wine.bottle.id)">
       <div class="row">
         <div class="input-field col s12 m6">
           <input type="text" class="validate" ng-model="wine.bottle.vineyard">
@@ -25,9 +25,17 @@
         </div>
       </div>
       <div class="row">
-        <button class="btn waves-effect waves-light red darken-4" type="submit">Submit</button>
         <button id="back-update" class="btn waves-effect waves-light grey" ui-sref="bottle">Back</button>
+        <button class="btn waves-effect waves-light red darken-4" type="submit">Submit</button>
       </div>
+    </form>
+    <form class="col s12 m6" ng-submit="wine.changeLabel(image, wine.bottle.id)">
+      <label>Add your own label:</label>
+        <input type="file" ngf-select ng-model="image" name="image"
+                 accept="'image/*'" ngf-max-size="2MB" required
+                 ngf-model-invalid="errorFile"><br>
+        <button class="btn waves-effect waves-light grey" ng-click="image = null" ng-show="image">Undo</button>
+        <button class="btn waves-effect waves-light red darken-4">Submit</button>
     </form>
   </div>
 </div>
