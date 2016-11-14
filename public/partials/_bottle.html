@@ -1,9 +1,8 @@
 <div class="container">
   <h3>{{wine.bottle.category}}</h3>
-    <div class="row">
+    <div id='bottle-image' class="row center" ng-if="wine.image !== '/images/medium/missing.png'">
       <div class="col s12 m6 center">
-        <img ng-hide="wine.image" class="responsive-img" src="{{wine.bottle.label}}"/>
-        <img src="{{wine.image}}" alt="" />
+        <img src="{{wine.image}}" alt="" class="responsive-img"/>
       </div>
       <div class="col s12 m6 black-text white center z-depth-2">
         <p class="col s12 m6">Vineyard: {{wine.bottle.vineyard}}</p>
@@ -11,6 +10,20 @@
         <p class="col s12 m6">Region: {{wine.bottle.region}}</p>
         <p class="col s12 m6">Appellation: {{wine.bottle.appellation}}</p>
         <p class="col s12 m6">Retail price: {{wine.bottle.retail_price | currency}}</p>
+        <p class="col s12 m6">Category: {{wine.bottle.category}}</p>
+      </div>
+    </div>
+    <div class="row center" ng-if="wine.image === '/images/medium/missing.png'">
+      <div class="col s12 m2 offset-m2 center">
+        <img src="{{wine.bottle.label}}" alt="" class="responsive-img"/>
+      </div>
+      <div class="col s12 m6 black-text white center z-depth-2">
+        <p class="col s12 m6">Vineyard: {{wine.bottle.vineyard}}</p>
+        <p class="col s12 m6">Vintage: {{wine.bottle.vintage}}</p>
+        <p class="col s12 m6">Region: {{wine.bottle.region}}</p>
+        <p class="col s12 m6">Appellation: {{wine.bottle.appellation}}</p>
+        <p class="col s12 m6">Retail price: {{wine.bottle.retail_price | currency}}</p>
+        <p class="col s12 m6">Category: {{wine.bottle.category}}</p>
       </div>
     </div>
     <div class="row center">

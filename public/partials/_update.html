@@ -23,6 +23,10 @@
           <input type="text" class="validate" ng-model="wine.bottle.retail_price">
           <label for="bottle" class="active">Retail Price</label>
         </div>
+        <div class="input-field col s12 m6">
+          <input type="text" class="validate" ng-model="wine.bottle.category">
+          <label for="bottle" class="active">Category</label>
+        </div>
       </div>
       <div class="row">
         <button id="back-update" class="btn waves-effect waves-light grey" ui-sref="bottle">Back</button>
@@ -30,7 +34,7 @@
       </div>
     </form>
     <form class="col s12 m6" ng-submit="wine.changeLabel(image, wine.bottle.id)">
-      <label>Add your own label:</label>
+      <label class="red-text text-darken-4">Upload your own label:</label>
         <input type="file" ngf-select ng-model="image" name="image"
                  accept="'image/*'" ngf-max-size="2MB" required
                  ngf-model-invalid="errorFile"><br>

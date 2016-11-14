@@ -51,3 +51,12 @@ body {
   position: fixed;
   bottom: 0;
 }
+
+/*BOTTLE PAGE*/
+
+#bottle-image {
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
