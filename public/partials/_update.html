@@ -40,7 +40,7 @@
         <button class="btn waves-effect waves-light grey" ng-click="image = null" ng-show="image">Undo</button>
         <button class="btn waves-effect waves-light red darken-4">Submit</button>
     </form>
-    <form class="col s12 m6" ng-submit="wine">
+    <form class="col s12 m6" ng-submit="wine.updateSearch(bottle, wine.bottle.id)">
       <h5>Refine Bottle Search:</h5>
       <h6 class="black-text">*follow example for best results*</h6>
       <div class="row">

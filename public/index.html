@@ -21,6 +21,7 @@
       })
     </script>
     <link href="https://fonts.googleapis.com/css?family=Vesper+Libre" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="/scripts/angular-flash-alert/dist/angular-flash.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
@@ -51,8 +52,8 @@
               </div>
             </ul>
             <nav>
-              <div class="nav-wrapper red darken-4">
-                <a ui-sref="home" class="brand-logo">Wine O'Clock</a>
+              <div class="nav-wrapper" id='custom-nav'>
+                <a id='logo' ui-sref="home" class="brand-logo">Wine O'Clock</a>
                 <ul class="right">
                   <li class='nav-link hide-on-small-only' ng-show="wine.user">Welcome, {{wine.user.first_name}}</li>
                   <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Account<i class="material-icons right">arrow_drop_down_circle</i></a></li>

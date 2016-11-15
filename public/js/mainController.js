@@ -137,7 +137,8 @@
       .then(function(response) {
         self.bottle = {};
         $state.go('cellar', {url: '/cellar'});
-        warnAlert('Bottle deleted!')
+        self.allBottles(self.user.id);
+        failAlert('Bottle deleted!')
         console.log(response);
       })
       .catch(function(err) {
@@ -174,6 +175,29 @@
         console.log(response);
         self.showBottle(id);
         $state.go('bottle', {url: '/bottle'});
+      })
+    }
+
+    this.updateSearch = function(bottle, id) {
+      return $http({
+        url: `${rootUrl}/bottles/results/${bottle.search}`,
+        method: 'GET'
+      })
+      .then(function(response) {
+        var bottle = response.data;
+        return $http({
+          url: `${rootUrl}/users/${self.user.id}/bottles/${id}`,
+          method: 'PATCH',
+          data: {bottle: bottle}
+        })
+        .then(function(response) {
+          self.bottle = response.data.bottle;
+          self.allBottles(self.user.id);
+          $state.go('bottle', {url: '/bottle'});
+        })
+        .catch(function(err) {
+          console.log(err);
+        })
       })
     }
 

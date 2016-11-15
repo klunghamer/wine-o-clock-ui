@@ -2,9 +2,9 @@
   <h3>{{wine.bottle.category}}</h3>
     <div id='bottle-image' class="row center" ng-if="wine.image !== '/images/medium/missing.png'">
       <div class="col s12 m6 center">
-        <img src="{{wine.image}}" alt="" class="responsive-img"/>
+        <img id="bottle" src="{{wine.image}}" alt="" class="responsive-img z-depth-2"/>
       </div>
-      <div class="col s12 m6 black-text white center z-depth-2">
+      <div id='bottle-info' class="col s12 m6 white-text center z-depth-2">
         <p class="col s12 m6">Vineyard: {{wine.bottle.vineyard}}</p>
         <p class="col s12 m6">Vintage: {{wine.bottle.vintage}}</p>
         <p class="col s12 m6">Region: {{wine.bottle.region}}</p>
@@ -17,7 +17,7 @@
       <div class="col s12 m2 offset-m2 center">
         <img src="{{wine.bottle.label}}" alt="" class="responsive-img"/>
       </div>
-      <div class="col s12 m6 black-text white center z-depth-2">
+      <div id='bottle-info2' class="col s12 m6 white-text center z-depth-2">
         <p class="col s12 m6">Vineyard: {{wine.bottle.vineyard}}</p>
         <p class="col s12 m6">Vintage: {{wine.bottle.vintage}}</p>
         <p class="col s12 m6">Region: {{wine.bottle.region}}</p>
@@ -28,7 +28,7 @@
     </div>
     <div class="row center">
       <button class="btn waves-effect waves-light red darken-4 white-text" ng-click="wine.deleteBottle(wine.bottle.id)">Delete</button>
-      <button class="btn waves-effect waves-light blue lighten-2 white-text" ui-sref="bottle.update">Edit<i class="material-icons right">arrow_downward</i></button>
+      <button class="btn waves-effect waves-light blue accent-1 white-text" ui-sref="bottle.update">Edit<i class="material-icons right">arrow_downward</i></button>
     </div>
   <div class="col s6">
     <div ui-view class="col s6"></div>
