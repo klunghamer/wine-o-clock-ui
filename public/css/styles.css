@@ -16,12 +16,17 @@ body {
 
 /*NAV BAR*/
 
-#custom-nav {
+#custom-nav, #footer-color {
   background: #b71c1c;
   background: -webkit-linear-gradient(left, #cc0000, #660000);
   background: -o-linear-gradient(right, #cc0000, #660000);
   background: -moz-linear-gradient(right, #cc0000, #660000);
   background: linear-gradient(to right, #cc0000, #660000)
+}
+
+#custom-footer {
+  position: fixed;
+  bottom: 0;
 }
 
 #logo {
@@ -84,4 +89,8 @@ body {
   border-radius: 4px;
   background-color: #D08B81;
   border: 3px solid maroon;
+}
+
+#bottle-container {
+  margin-bottom: 5em;
 }
