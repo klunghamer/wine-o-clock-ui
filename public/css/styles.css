@@ -94,3 +94,38 @@ body {
 #bottle-container {
   margin-bottom: 5em;
 }
+
+/*SPLITCHAR*/
+
+.horizontal-tri {
+    position:relative;
+    display:inline-block;
+    overflow:hidden;
+    white-space: pre;
+    font-size: 12vw;
+    font-weight: 900;
+}
+.horizontal-tri:before {
+    display:block;
+    z-index:1;
+    position:absolute;
+    top:0;
+    width: 33%;
+    content: attr(data-content);
+    overflow:hidden;
+    pointer-events: none;
+    color: #cc0000;
+}
+.horizontal-tri:after {
+    display:block;
+    direction: rtl;
+    position:absolute;
+    z-index:2;
+    top:0;
+    left:68%;
+    width: 33%;
+    content: attr(data-content);
+    overflow:hidden;
+    pointer-events: none;
+    color: #660000;
+}
