@@ -1,7 +1,6 @@
-<div class="container">
-  <h5>Edit Bottle:</h5>
   <div class="row">
     <form class="col s12 m6 black-text" ng-submit="wine.updateBottle(wine.bottle, wine.bottle.id)">
+      <h5 class="red-text text-darken-4">Edit Bottle:</h5>
       <div class="row">
         <div class="input-field col s12 m6">
           <input type="text" class="validate" ng-model="wine.bottle.vineyard">
@@ -34,12 +33,23 @@
       </div>
     </form>
     <form class="col s12 m6" ng-submit="wine.changeLabel(image, wine.bottle.id)">
-      <label class="red-text text-darken-4">Upload your own label:</label>
+      <h5>Upload your own label:</h5>
         <input type="file" ngf-select ng-model="image" name="image"
                  accept="'image/*'" ngf-max-size="2MB" required
-                 ngf-model-invalid="errorFile"><br>
+                 ngf-model-invalid="errorFile"><br><br>
         <button class="btn waves-effect waves-light grey" ng-click="image = null" ng-show="image">Undo</button>
         <button class="btn waves-effect waves-light red darken-4">Submit</button>
     </form>
+    <form class="col s12 m6" ng-submit="wine">
+      <h5>Refine Bottle Search:</h5>
+      <h6 class="black-text">*follow example for best results*</h6>
+      <div class="row">
+        <div class="input-field col s12 m6">
+          <input type="text" class="validate black-text" ng-model="bottle.search" required>
+          <label for="bottle">Ex. Aubert Chardonnay 2010</label>
+        </div>
+      </div>
+      <button id="back-update" class="btn waves-effect waves-light grey" ui-sref="bottle">Back</button>
+      <button class="btn waves-effect waves-light red darken-4" type="submit" name="action">Search</button>
+    </form>
   </div>
-</div>
