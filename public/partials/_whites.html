@@ -20,7 +20,7 @@
 <div class='row'>
 <!-- CHARDONNAY   -->
   <div id="wine1" class="col s12">
-    <div ng-repeat='bottle in wine.bottles'>
+    <div ng-repeat='bottle in wine.bottles | orderBy: "vineyard"'>
       <div ng-if="bottle.category === 'Chardonnay'">
         <div class="col s12 m6">
           <div class="card horizontal">
@@ -46,7 +46,7 @@
 
 <!-- SAUVIGNON BLANC  -->
   <div id="wine2" class="col s12">
-    <div ng-repeat='bottle in wine.bottles'>
+    <div ng-repeat='bottle in wine.bottles | orderBy: "vineyard"'>
       <div ng-if="bottle.category === 'Sauvignon Blanc'">
         <div class="col s12 m6">
           <div class="card horizontal">
@@ -72,7 +72,7 @@
 
 <!-- CHENIN BLANC -->
   <div id="wine3" class="col s12">
-    <div ng-repeat='bottle in wine.bottles'>
+    <div ng-repeat='bottle in wine.bottles | orderBy: "vineyard"'>
       <div ng-if="bottle.category === 'Chenin Blanc'">
         <div class="col s12 m6">
           <div class="card horizontal">
@@ -98,7 +98,7 @@
 
 <!-- Riesling-->
   <div id="wine4" class="col s12">
-    <div ng-repeat='bottle in wine.bottles'>
+    <div ng-repeat='bottle in wine.bottles | orderBy: "vineyard"'>
       <div ng-if="bottle.category === 'Riesling'">
         <div class="col s12 m6">
           <div class="card horizontal">
@@ -124,7 +124,7 @@
 
   <!-- PINOT GRIGIO -->
 <div id="wine5" class="col s12">
-  <div ng-repeat='bottle in wine.bottles'>
+  <div ng-repeat='bottle in wine.bottles | orderBy: "vineyard"'>
     <div ng-if="bottle.category === 'Pinot Gris/Grigio'">
       <div class="col s12 m6">
         <div class="card horizontal">
@@ -150,7 +150,7 @@
 
 <!-- OTHER -->
 <div id="wine6" class="col s12">
-  <div ng-repeat='bottle in wine.bottles'>
+  <div ng-repeat='bottle in wine.bottles | orderBy: "vineyard"'>
     <div ng-if="bottle.red_or_white === 'White Wines' && bottle.category !== 'Chardonnay' && bottle.category !== 'Sauvignon Blanc' && bottle.category !== 'Chenin Blanc' && bottle.category !== 'Riesling' && bottle.category !== 'Pinot Gris/Grigio'">
       <div class="col s12 m6">
         <div class="card horizontal">

@@ -21,7 +21,7 @@
 <div class='row'>
 <!-- PINOTS   -->
   <div id="test1" class="col s12">
-    <div ng-repeat='bottle in wine.bottles'>
+    <div ng-repeat='bottle in wine.bottles | orderBy: "vineyard"'>
       <div ng-if="bottle.category === 'Pinot Noir'">
         <div class="col s12 m6">
           <div class="card horizontal">
@@ -47,7 +47,7 @@
 
 <!-- CABS  -->
   <div id="test2" class="col s12">
-    <div ng-repeat='bottle in wine.bottles'>
+    <div ng-repeat='bottle in wine.bottles | orderBy: "vineyard"'>
       <div ng-if="bottle.category === 'Cabernet Sauvignon'">
         <div class="col s12 m6">
           <div class="card horizontal">
@@ -73,7 +73,7 @@
 
 <!-- MERLOTS -->
   <div id="test3" class="col s12">
-    <div ng-repeat='bottle in wine.bottles'>
+    <div ng-repeat='bottle in wine.bottles | orderBy: "vineyard"'>
       <div ng-if="bottle.category === 'Merlot'">
         <div class="col s12 m6">
           <div class="card horizontal">
@@ -99,7 +99,7 @@
 
 <!-- SYRAH -->
   <div id="test4" class="col s12">
-    <div ng-repeat='bottle in wine.bottles'>
+    <div ng-repeat='bottle in wine.bottles | orderBy: "vineyard"'>
       <div ng-if="bottle.category === 'Syrah/Shiraz'">
         <div class="col s12 m6">
           <div class="card horizontal">
@@ -125,7 +125,7 @@
 
   <!-- MALBEC -->
 <div id="test5" class="col s12">
-  <div ng-repeat='bottle in wine.bottles'>
+  <div ng-repeat='bottle in wine.bottles | orderBy: "vineyard"'>
     <div ng-if="bottle.category === 'Malbec'">
       <div class="col s12 m6">
         <div class="card horizontal">
@@ -151,7 +151,7 @@
 
 <!-- ZINFANDEL -->
 <div id="test6" class="col s12">
-  <div ng-repeat='bottle in wine.bottles'>
+  <div ng-repeat='bottle in wine.bottles | orderBy: "vineyard"'>
     <div ng-if="bottle.category === 'Zinfandel'">
       <div class="col s12 m6">
         <div class="card horizontal">
@@ -177,7 +177,7 @@
 
 <!-- OTHER -->
 <div id="test7" class="col s12">
-  <div ng-repeat='bottle in wine.bottles'>
+  <div ng-repeat='bottle in wine.bottles | orderBy: "vineyard"'>
     <div ng-if="bottle.red_or_white === 'Red Wines' && bottle.category !== 'Zinfandel' && bottle.category !== 'Pinot Noir' && bottle.category !== 'Cabernet Sauvignon' && bottle.category !== 'Merlot' && bottle.category !== 'Syrah/Shiraz' && bottle.category !== 'Malbec'">
       <div class="col s12 m6">
         <div class="card horizontal">
