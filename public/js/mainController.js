@@ -4,8 +4,8 @@
   .controller('WineController', function($http, $state, Flash, Upload, $scope){
     var self = this;
     this.adding = false;
-    // var rootUrl = 'http://localhost:3000';
-    var rootUrl = 'https://wine-o-clock-api.herokuapp.com';
+    var rootUrl = 'http://localhost:3000';
+    // var rootUrl = 'https://wine-o-clock-api.herokuapp.com';
 
     this.signup = function(user) {
       console.log(user);
@@ -185,6 +185,7 @@
       })
       .then(function(response) {
         var bottle = response.data;
+        console.log('BOTTLE>', bottle);
         return $http({
           url: `${rootUrl}/users/${self.user.id}/bottles/${id}`,
           method: 'PATCH',
@@ -202,7 +203,18 @@
     }
 
     this.resetThumb = function(id) {
-      console.log(id);
+      return $http({
+        url: `${rootUrl}/users/${self.user.id}/bottles/${id}`,
+        method: 'PATCH',
+        data: {bottle: {label: 'http://cache.wine.com/labels/101334m.jpg'}}
+      })
+      .then(function(response) {
+        self.allBottles(self.user.id);
+        console.log(response);
+      })
+      .catch(function(err) {
+        console.log(err);
+      })
     }
 
 

@@ -34,7 +34,7 @@
                  accept="'image/*'" ngf-max-size="2MB" required
                  ngf-model-invalid="errorFile"><br><br>
         <button class="btn waves-effect waves-light grey" ng-click="image = null" ng-show="image">Undo</button>
-        <button class="btn waves-effect waves-light red darken-4">Submit</button>
+        <button class="btn waves-effect waves-light red darken-4" type="submit">Submit</button>
     </form>
     <form class="col s12 m6" ng-submit="wine.updateSearch(bottle, wine.bottle.id)">
       <h5>Refine Bottle Search:</h5>

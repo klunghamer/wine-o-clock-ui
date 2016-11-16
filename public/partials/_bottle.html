@@ -6,10 +6,10 @@
 <div class="container" id="bottle-container">
   <h3>{{wine.bottle.category}}</h3>
     <div id='bottle-image' class="row center" ng-if="wine.image !== '/images/medium/missing.png'">
-      <div class="col s12 m6 center">
+      <div class="col s12 m6">
         <img id="bottle" src="{{wine.image}}" alt="" class="responsive-img z-depth-2 materialboxed"/>
       </div>
-      <div id='bottle-info' class="col s12 m6 white-text center z-depth-2">
+      <div id='bottle-info' class="col s12 m6 white-text center z-depth-2 valign">
         <p class="col s12 m6">Vineyard: {{wine.bottle.vineyard}}</p>
         <p class="col s12 m6">Vintage: {{wine.bottle.vintage}}</p>
         <p class="col s12 m6">Region: {{wine.bottle.region}}</p>

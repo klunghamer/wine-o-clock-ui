@@ -148,3 +148,15 @@ body {
     pointer-events: none;
     color: #660000;
 }
+
+@media (max-width: 600px) {
+  #bottle {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  #bottle-info, #bottle-info2 {
+    margin-right: 2em;
+    margin-left: 2em;
+  }
+}
