@@ -81,6 +81,11 @@ body {
   flex-wrap: wrap;
 }
 
+#bottle-icon {
+  max-height: 200px;
+  mix-blend-mode: multiply;
+}
+
 #bottle {
   border-radius: 4px;
   margin-bottom: 1em;
