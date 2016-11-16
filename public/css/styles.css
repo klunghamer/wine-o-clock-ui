@@ -101,6 +101,19 @@ body {
   margin-bottom: 5em;
 }
 
+/*RESET THUMB OPTION*/
+#option {
+  display: none;
+}
+
+#thumbnail:hover > #option {
+  display: inline;
+  position: absolute;
+  top: 0;
+  background-color: white;
+  cursor: pointer;
+}
+
 /*SPLITCHAR*/
 
 .horizontal-tri {

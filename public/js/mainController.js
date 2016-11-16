@@ -201,6 +201,10 @@
       })
     }
 
+    this.resetThumb = function(id) {
+      console.log(id);
+    }
+
 
     // FLASH
     function passAlert(msg){

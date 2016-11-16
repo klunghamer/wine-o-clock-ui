@@ -1,6 +1,6 @@
 (function() {
   angular
-    .module('WineApp', ['ui.router', 'ngFlash', 'ngFileUpload'])
+    .module('WineApp', ['ui.router', 'ngFlash', 'ngFileUpload', 'ngTouch'])
     .config(MainRouter);
 
   MainRouter.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
