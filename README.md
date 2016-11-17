@@ -23,3 +23,5 @@ https://wine-o-clock-api.herokuapp.com/ --> https://github.com/klunghamer/wine-o
 
 User Stories can be found in the 'Issues' tab
 
+Entity Relationship Diagram ![alt tag](https://github.com/klunghamer/wine-o-clock-ui/blob/master/ERD.png)
+
