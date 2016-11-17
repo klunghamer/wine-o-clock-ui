@@ -97,10 +97,7 @@
           data: bottle
         })
         .then(function(response) {
-          var id = response.data.bottle.id;
-          bottle.id = id;
-          self.bottles.push(bottle);
-          console.log('update bottles>>', self.bottles);
+          self.allBottles(self.user.id);
           self.adding = false;
           if (response.data.bottle.red_or_white === 'Red Wines') {
             $state.go('reds', {url: '/reds'});
