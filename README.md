@@ -7,14 +7,14 @@ https://wine-o-clock-api.herokuapp.com/ --> https://github.com/klunghamer/wine-o
 
 ## Technologies
 
--Ruby on Rails
--AngularJS
--AWS S3
--PostgreSQL
--RESTful routing
--wine.com Third Party API
--Express
--Node.js
--Materialize
--jQuery
+- Ruby on Rails
+- AngularJS
+- AWS S3
+- PostgreSQL
+- RESTful routing
+- wine.com Third Party API
+- Express
+- Node.js
+- Materialize
+- jQuery
 
