@@ -4,7 +4,7 @@ Virtual Wine Cellar Application
 
 https://wine-o-clock.herokuapp.com/
 
-https://wine-o-clock-api.herokuapp.com/ --> https://github.com/klunghamer/wine-o-clock-api (Rails API Github repo)
+https://wine-o-clock-api.herokuapp.com/ --> https://github.com/klunghamer/wine-o-clock-api (Rails API repo)
 
 ## Technologies
 
