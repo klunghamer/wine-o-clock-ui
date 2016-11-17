@@ -1,1 +1,3 @@
-# wine-o-clock-ui
+# Wine O'Clock
+
+https://wine-o-clock.herokuapp.com/
