@@ -1,0 +1,38 @@
+<div class="container">
+  <h3>Edit Info:</h3>
+    <div class="row">
+      <form class="col s12" ng-submit="wine.editUser(wine.user)">
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <input id="username" type="text" class="validate black-text" ng-model="wine.user.first_name">
+            <label for="username" class="active">First Name</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input id="zipcode" type="text" class="validate black-text" ng-model="wine.user.last_name">
+            <label for="zipcode" class="active">Last Name</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input id="email" type="email" class="validate black-text" ng-model="wine.user.email">
+            <label for="email" class="active">Email</label>
+          </div>
+        </div>
+        <button class="btn waves-effect waves-light red darken-4" type="submit" name="action">Edit</button>
+      </form>
+    </div>
+  <h3>Change Password:</h3>
+    <div class="row">
+      <form class="col s12" ng-submit="wine.editPassword(user)">
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <input id="password" type="password" class="validate black-text" ng-model="user.password1">
+            <label for="password">Password</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input id="password" type="password" class="validate black-text" ng-model="user.password2">
+            <label for="password">Confirm Password</label>
+          </div>
+        </div>
+        <button class="btn waves-effect waves-light red darken-4" type="submit" name="action">Edit</button>
+      </form>
+    </div>
+</div>

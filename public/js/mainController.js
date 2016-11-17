@@ -4,8 +4,8 @@
   .controller('WineController', function($http, $state, Flash, Upload, $scope){
     var self = this;
     this.adding = false;
-    // var rootUrl = 'http://localhost:3000';
-    var rootUrl = 'https://wine-o-clock-api.herokuapp.com';
+    var rootUrl = 'http://localhost:3000';
+    // var rootUrl = 'https://wine-o-clock-api.herokuapp.com';
 
     this.signup = function(user) {
       console.log(user);
@@ -212,6 +212,45 @@
       .catch(function(err) {
         console.log(err);
       })
+    }
+
+    this.editUser = function(user) {
+      console.log(user);
+      return $http({
+        url: `${rootUrl}/users/${self.user.id}`,
+        method: 'PATCH',
+        data: {user:user}
+      })
+      .then(function(response) {
+        $state.go('cellar', {url: '/cellar'});
+        passAlert('<strong>Success!</strong> You have updated your info, ' + response.data.user.first_name + '.')
+        console.log(response);
+      })
+      .catch(function(err) {
+        console.log(err);
+      })
+    }
+
+    this.editPassword = function(user) {
+      if (user.password1 === user.password2) {
+        var password = user.password1;
+        var user = {};
+        user.password = password;
+        // console.log(user);
+        return $http({
+          url: `${rootUrl}/users/${self.user.id}`,
+          method: 'PATCH',
+          data: {user:user}
+        })
+        .then(function(response) {
+          $state.go('cellar', {url: '/cellar'});
+          passAlert('<strong>Success!</strong> You have changed your password, ' + response.data.user.first_name + '.')
+          console.log(response);
+        })
+        .catch(function(err) {
+          console.log(err);
+        })
+      }
     }
 
 

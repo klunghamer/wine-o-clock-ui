@@ -47,6 +47,10 @@
       url: '/update',
       templateUrl: '../partials/_update.html',
     })
+    .state('manage', {
+      url: '/manage',
+      templateUrl: '../partials/_manage.html'
+    })
 
     $urlRouterProvider.otherwise('/');
 
