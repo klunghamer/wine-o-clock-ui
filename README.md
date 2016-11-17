@@ -19,3 +19,7 @@ https://wine-o-clock-api.herokuapp.com/ --> https://github.com/klunghamer/wine-o
 - Materialize
 - jQuery
 
+## Info
+
+User Stories can be found in the 'Issues' tab
+
