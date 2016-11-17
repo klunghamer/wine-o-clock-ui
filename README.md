@@ -23,5 +23,8 @@ https://wine-o-clock-api.herokuapp.com/ --> https://github.com/klunghamer/wine-o
 
 User Stories can be found in the 'Issues' tab
 
-Entity Relationship Diagram ![alt tag](https://github.com/klunghamer/wine-o-clock-ui/blob/master/ERD.png)
+Entity Relationship Diagram 
 
+![alt tag](https://github.com/klunghamer/wine-o-clock-ui/blob/master/ERD.png)
+
+This application allows users to login and manage their own virtual wine cellar and create an inventory of their wine bottles. They can also upload pictures of the wine labels through S3 in AWS
